@@ -1,5 +1,6 @@
 # !!!IMPORTS
 from game.parachute import Parachute
+from game.secret_word import SecretWord
 
 class Director:
     """A person who directs the game. 
@@ -40,6 +41,11 @@ class Director:
         #Thes lines draw the parachute
         parachute=Parachute()
         parachute.build_parachute()
+        
+        #crea la lista de palabras a adivinar y la mezcla    ###NO escoge la palabra a adivinar##
+        secret_word = SecretWord()
+        secret_word._word_list()
+        self._word = secret_word._word()
         
     def _do_updates(self):
         """Keeps watch on where the seeker is moving.
