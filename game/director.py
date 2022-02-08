@@ -36,6 +36,7 @@ class Director:
             self (Director): An instance of Director.
         """
         # !!!ADD LOGIC HERE
+        #Thes lines draw the parachute
         parachute=Parachute()
         parachute.build_parachute()
         
