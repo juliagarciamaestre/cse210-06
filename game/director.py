@@ -46,6 +46,8 @@ class Director:
         #crea la lista de palabras a adivinar y la mezcla    ###NO escoge la palabra a adivinar##
         secret_word = SecretWord()
         secret_word._word_list()
+        
+        ####This line is the last line that is executed, it prints the word to guess from the list.####
         self._word = secret_word._word()
         
     def _do_updates(self):
