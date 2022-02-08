@@ -42,6 +42,7 @@ class Director:
         parachute=Parachute()
         parachute.build_parachute()
         
+        
         #crea la lista de palabras a adivinar y la mezcla    ###NO escoge la palabra a adivinar##
         secret_word = SecretWord()
         secret_word._word_list()
