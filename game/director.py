@@ -1,4 +1,5 @@
 # !!!IMPORTS
+from game.parachute import Parachute
 
 class Director:
     """A person who directs the game. 
@@ -35,6 +36,8 @@ class Director:
             self (Director): An instance of Director.
         """
         # !!!ADD LOGIC HERE
+        parachute=Parachute()
+        parachute.build_parachute()
         
     def _do_updates(self):
         """Keeps watch on where the seeker is moving.
