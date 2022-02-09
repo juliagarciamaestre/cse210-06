@@ -9,8 +9,9 @@ class Parachute:
         #estos indices es donde estan las rayitas en el parachute
         self._indices=[2,1,2,3,3,0,3,1,3,3,3,4]
    def build_parachutes(self):
-        #Se separan los parachutes segun su roll
-        #El primer parachute se muestra completo 
+                                
+                                #Se separan los parachutes segun su roll
+                                #El primer parachute se muestra completo 
         self._parachutte=[      ['_', '_', '_', '_', '_'],
                                 [' ', ' ', ' ', ' ', ' '],
                                 [' ', '_', ' ', '_', ' '],
@@ -22,7 +23,7 @@ class Parachute:
                                 [' ', '/', ' ', '\\', ' '],
                          ]
         #El segundo parachute se muestra con las lineas que se van quitando/borrando segun los errores del usuario.
-        # El seguno parachute ayudara en la iteracion, cada vez que se equivoque el usuario se llamara al parachute que corresponde.                 
+        # El seguno parachute ayudara en la iteracion, cada vez que se equivoque el usuario se llamara al parachute2.
         self._parachutte2=[     ['_', '_', '_', '_', '_'],
                                 [' ', ' ', ' ', ' ', ' '],
                                 [' ', '_', ' ', '_', ' '],
