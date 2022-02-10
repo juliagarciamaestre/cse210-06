@@ -1,17 +1,14 @@
 #!!! IMPORTS
-
-
 class Parachute:
     
    def __init__(self):
         self._parachutte=[]
         self._parachutte2=[]
         #estos indices es donde estan las rayitas en el parachute
-        self._indices=[2,1,2,3,3,0,3,1,3,3,3,4]
+        self._indices=[2,1,2,3,3,0,3,1,3,3,3,4]#indices de las rayitas a borrar
    def build_parachutes(self):
-                                
-                                #Se separan los parachutes segun su roll
-                                #El primer parachute se muestra completo 
+        #Se separan los parachutes segun su roll
+        #El primer parachute se muestra completo 
         self._parachutte=[      ['_', '_', '_', '_', '_'],
                                 [' ', ' ', ' ', ' ', ' '],
                                 [' ', '_', ' ', '_', ' '],
@@ -23,7 +20,7 @@ class Parachute:
                                 [' ', '/', ' ', '\\', ' '],
                          ]
         #El segundo parachute se muestra con las lineas que se van quitando/borrando segun los errores del usuario.
-        # El seguno parachute ayudara en la iteracion, cada vez que se equivoque el usuario se llamara al parachute2.
+        # El seguno parachute ayudara en la iteracion, cada vez que se equivoque el usuario se llamara al parachute que corresponde.                 
         self._parachutte2=[     ['_', '_', '_', '_', '_'],
                                 [' ', ' ', ' ', ' ', ' '],
                                 [' ', '_', ' ', '_', ' '],
@@ -33,19 +30,8 @@ class Parachute:
                                 [' ', ' ', 'O', ' ', ' '],
                                 [' ', '/', '|', '\\', ' ', ' '],
                                 [' ', '/', ' ', '\\', ' '],
-                         ]                 
-        
-        print("\t")
-        #Imprimir parachute1 el dibujito
-        # matrix : 7rows x 5 columns                          
-        for i in range(0,9):
-            for j in range(0,5):
-                self._spl = self._parachutte[i][j]
-                print(self._spl, end=" ")
-            print("\n\t")
-        #Ground    
-        print("^^^^^^^^^^^^^^^^^")
-
+                         ]        
+       
    def delete_lines(self):
        print()
        #variable local auxiliar para guardar la opcion del usuario
@@ -62,19 +48,18 @@ class Parachute:
                    #borrar rayita
                    self._parachutte2[2][1]=" "
                    #Actualizo parachute, este metodo deberia ir en updates()
-                   para.display_parachute2()
+                   self._display_parachute2()
                    #si se escoge "y" se vuelve a iterar sobre el parachute2 que tendra las rayitas borradas.
                    _c=input("Continua Borrando lineas ? [y/n] : ")
                    if _c.lower()=="y":
                        pass
-                       #para.delete_lines()
                    else:
                        print("Thank you..")
                        exit()
-               #segunda yayita        
+                    #segunda yayita        
                elif primer_indice==2 and segundo_indice==3:    
                    self._parachutte2[2][3]=" "
-                   para.display_parachute2()
+                   self._display_parachute2()
                    #si se escoge "y" se vuelve a iterar sobre el parachute2 que ya tiene las rayitas borradas
                    _c=input("Continua borrando ? [y/n] : ")
                    if _c.lower()=="y":
@@ -84,7 +69,7 @@ class Parachute:
                        exit()
                elif primer_indice==3 and segundo_indice==0:
                    self._parachutte2[3][0]=" "
-                   para.display_parachute2()
+                   self._display_parachute2()
                    #si se escoge "y" se vuelve a iterar sobre el parachute2 que ya tiene las rayitas borradas
                    _c=input("Continua borrando ? [y/n] : ")
                    if _c.lower()=="y":
@@ -94,7 +79,7 @@ class Parachute:
                        exit()
                elif primer_indice==3 and segundo_indice==1:
                    self._parachutte2[3][1]=" "
-                   para.display_parachute2()
+                   self._display_parachute2()
                    #si se escoge "y" se vuelve a iterar sobre el parachute2 que ya tiene las rayitas borradas
                    _c=input("Continua borrando ? [y/n] : ")
                    if _c.lower()=="y":
@@ -103,8 +88,8 @@ class Parachute:
                        print("Thank you..")
                        exit()
                elif primer_indice==3 and segundo_indice==4:
-                   self.display_parachute2[3][4]=" "
-                   para.display_parachute2()
+                   self._parachutte2[3][4]=" "
+                   self._display_parachute2()
                    #si se escoge "y" se vuelve a iterar sobre el parachute2 que ya tiene las rayitas borradas
                    _c=input("Continua borrando ? [y/n] : ")
                    if _c.lower()=="y":
@@ -113,9 +98,19 @@ class Parachute:
                        print("Thank you..")
                        exit()
                elif primer_indice==4 and segundo_indice==0:
-                   self.display_parachute2[4][0]=" "
-                   para.display_parachute2()
+                   self._parachute2[4][0]=" "
+                   self._display_parachute2()
                    #si se escoge "y" se vuelve a iterar al loop for sobre el parachute2 que ya tiene las rayitas borradas
+                   _c=input("Continua borrando ? [y/n] : ")
+                   if _c.lower()=="y":
+                       pass
+                   else:
+                       print("Thank you..")
+                       exit()
+               elif primer_indice==4 and segundo_indice==4:
+                   x = self._parachute2[4][4]=" "
+                   self._display_parachute2()
+                    #si se escoge "y" se vuelve a iterar al loop for sobre el parachute2 que ya tiene las rayitas borradas
                    _c=input("Continua borrando ? [y/n] : ")
                    if _c.lower()=="y":
                        pass
@@ -126,7 +121,20 @@ class Parachute:
                 #..........................................
 
        #imprimir parachute2. este metodo deberia ir en el output()
-   def display_parachute2(self):
+   def _display_parachute1(self):
+       print("\t")
+       #Imprimir parachute1 el dibujito
+       # matrix : 7rows x 5 columns                          
+       for i in range(0,9):
+           for j in range(0,5):
+               self._spl = self._parachutte[i][j]
+               print(self._spl, end=" ")
+           print("\n\t")
+        #Ground    
+       print("^^^^^^^^^^^^^^^^^")
+
+
+   def _display_parachute2(self):
        print("\t")
        #Imprime el dibujito
        #matrix : 7rows x 5 columns                          
@@ -136,9 +144,3 @@ class Parachute:
                self._spl = self._parachutte2[i][j]
                print(self._spl, end=" ")
            print()
-       #print("\n\t")
-               
-
-para = Parachute()         
-para.build_parachutes()
-para.delete_lines()
