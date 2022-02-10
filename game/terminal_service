@@ -13,8 +13,9 @@ class TerminalService:
             prompt (string): The prompt to display on the terminal.
 
         Returns:
-            string: The user's input as text.
+            string: The user's input as text.            
         """
+        
         return input(prompt)
 
     def read_number(self, prompt):
